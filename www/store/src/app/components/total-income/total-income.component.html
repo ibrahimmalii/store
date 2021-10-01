@@ -1,0 +1,45 @@
+<div class="container">
+
+  <h1 class="text-danger">Get Total Income</h1>
+  <div class="row p-2">
+    <div class="col-4">
+      ID <input type="text" class="form-control mb-3" #inputId>
+      Start-Date <input type="date" class="form-control mb-3" #inputStartDate>
+      End-Date <input type="date" class="form-control mb-3" #inputEndDate>
+      <input type="submit" value='submit' class="btn btn-success text-light"
+        (click)="getData(inputId.value, inputStartDate.value, inputEndDate.value)">
+    </div>
+    <div class="col-6 offset-1">
+      <table class="table mt-3">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Total Income</th>
+            <th scope="col">Dates</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of currentArr; let index = index">
+            <th scope="row">{{index + 1}}</th>
+            <td>{{item.id}}</td>
+            <td>{{item.total_income}}</td>
+            <td>{{item.dates}}</td>
+          </tr>
+          <tr>
+            <ul class="pagination justify-content-center" *ngIf="responseData">
+              <li class="page-item"><a class="page-link" *ngIf="firstTable.length"
+                  (click)="paginateTable(firstTable)">1</a></li>
+              <li class="page-item"><a class="page-link" *ngIf="secondTable.length"
+                  (click)="paginateTable(secondTable)"> 2</a></li>
+              <li class="page-item"><a class="page-link" *ngIf="thirdTable.length"
+                  (click)="paginateTable(thirdTable)">3</a></li>
+              <li class="page-item"><a class="page-link" href="#" *ngIf="responseData.length > 2">Next</a></li>
+            </ul>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

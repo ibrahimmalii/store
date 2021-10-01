@@ -2,12 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-seller',
-  templateUrl: './seller.component.html',
-  styleUrls: ['./seller.component.css']
+  selector: 'app-total-income',
+  templateUrl: './total-income.component.html',
+  styleUrls: ['./total-income.component.css']
 })
-export class SellerComponent implements OnInit {
-
+export class TotalIncomeComponent implements OnInit {
   constructor(private http : HttpClient) { }
 
   ngOnInit(): void {
@@ -22,7 +21,7 @@ export class SellerComponent implements OnInit {
 
   getData(id : string, startDate : string, endDate:string){
     if(id){
-      this.http.get(`http://localhost:3000/transactions?page=0&id=${id}&startDate=${startDate}&endDate=${endDate}`).subscribe(res=>{
+      this.http.get(`http://localhost:3000/totalIncome?id=${id}&startDate=${startDate}&endDate=${endDate}`).subscribe(res=>{
         this.responseData = res;
         this.firstTable = res;
         this.firstTable = this.firstTable.splice(0, 2);
@@ -42,5 +41,3 @@ export class SellerComponent implements OnInit {
   }
 
 }
-
-
