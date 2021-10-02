@@ -26,7 +26,7 @@ app.get('/transactions/:query?', async(req, res)=>{
 app.get('/totalIncome/:query?', async(req, res)=>{
     const {id} = req.query;
     if(id){
-        const transaction = await sequelize.query(`select * from day WHERE seller_id = ${id}`);
+        const transaction = await sequelize.query(`SELECT * ,name FROM day, seller  WHERE seller_id = ${id}`);
         res.send(transaction[0]);
     }else{
         res.status(404).send('data invalid');
