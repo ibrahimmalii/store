@@ -21,7 +21,7 @@ export class TotalIncomeComponent implements OnInit {
 
   getData(id : string, startDate : string, endDate:string){
     if(id){
-      this.http.get(`http://localhost:3000/totalIncome?id=${id}&startDate=${startDate}&endDate=${endDate}`).subscribe(res=>{
+      this.http.get(`http://localhost:3000/totalIncome?id=${id}`).subscribe(res=>{
         this.responseData = res;
         this.firstTable = res;
         this.firstTable = this.firstTable.splice(0, 2);

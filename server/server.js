@@ -24,15 +24,12 @@ app.get('/transactions/:query?', async(req, res)=>{
 })
 
 app.get('/totalIncome/:query?', async(req, res)=>{
-    const {id, startDate, endDate} = req.query;
+    const {id} = req.query;
     if(id){
         const transaction = await sequelize.query(`select * from day WHERE seller_id = ${id}`);
         res.send(transaction[0]);
-    }else if(id && startDate && endDate){
-        const transaction = await sequelize.query(`select * from transactions WHERE (seller_id = ${id} AND dates BETWEEN ${startDate} AND ${endDate} )`);
-        res.send(transaction[0]);
     }else{
-        res.send('data invalid');
+        res.status(404).send('data invalid');
     }
 })
 

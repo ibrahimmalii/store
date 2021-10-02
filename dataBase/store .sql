@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2021 at 01:47 AM
+-- Generation Time: Oct 02, 2021 at 02:03 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -40,7 +40,7 @@ CREATE TABLE `day` (
 
 INSERT INTO `day` (`id`, `total_income`, `seller_id`, `dates`) VALUES
 (1, 2000, 1, '2021-10-11'),
-(2, 3892, 1, NULL),
+(2, 3892, 1, '2021-10-28'),
 (3, 7382, 1, '2021-10-30'),
 (4, 9273, 2, '2021-10-06'),
 (5, 83652, 2, '2021-10-26'),
