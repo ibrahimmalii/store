@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2021 at 02:03 AM
+-- Generation Time: Oct 02, 2021 at 02:52 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -54,16 +54,17 @@ INSERT INTO `day` (`id`, `total_income`, `seller_id`, `dates`) VALUES
 --
 
 CREATE TABLE `seller` (
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `seller`
 --
 
-INSERT INTO `seller` (`id`) VALUES
-(1),
-(2);
+INSERT INTO `seller` (`id`, `name`) VALUES
+(1, 'Ibrahim'),
+(2, 'Alaa');
 
 -- --------------------------------------------------------
 
